@@ -13,7 +13,7 @@ export const ArtPieceDetails = ({ currentPieceDetails, onHandleFavorites }) => {
         alt="cute art"
       />
       <FavoriteButton
-        currentPieceDetailsSlug={currentPieceDetails.slug}
+        currentPieceDetailsSlug={currentPieceDetails}
         onHandleFavorites={onHandleFavorites}
       />
       <h3>{currentPieceDetails.name}</h3>

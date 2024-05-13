@@ -15,7 +15,7 @@ const ArtPiecesPreview = ({ image, artPiecesInfo, onHandleFavorites }) => {
         />
       </Link>
       <FavoriteButton
-        currentPieceDetailsSlug={image.slug}
+        currentPieceDetailsSlug={image}
         artPiecesInfo={artPiecesInfo}
         onHandleFavorites={onHandleFavorites}
       />
