@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FavoriteButton } from "./Buttons/FavoriteButton";
 
 const ArtPiecesPreview = ({ image }) => {
   return (
@@ -13,6 +14,7 @@ const ArtPiecesPreview = ({ image }) => {
           alt="a picture of art"
         />
       </Link>
+      <FavoriteButton />
       <p>{image.artist}</p>
       <p>{image.name}</p>
     </li>

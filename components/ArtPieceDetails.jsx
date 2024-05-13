@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FavoriteButton } from "./Buttons/FavoriteButton";
 
 export const ArtPieceDetails = ({ currentPieceDetails }) => {
   return (
@@ -11,6 +12,7 @@ export const ArtPieceDetails = ({ currentPieceDetails }) => {
         width={244}
         alt="cute art"
       />
+      <FavoriteButton />
       <h3>{currentPieceDetails.name}</h3>
       <p>Artist: {currentPieceDetails.artist}</p>
       <p>Year: {currentPieceDetails.year}</p>
