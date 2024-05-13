@@ -3,12 +3,19 @@ import React from "react";
 import ArtPiecesPreview from "./ArtPiecesPreview";
 import Link from "next/link";
 
-const ArtPieces = ({ pieces }) => {
+const ArtPieces = ({ pieces, artPiecesInfo, onHandleFavorites }) => {
   return (
     <>
       <ul>
         {pieces.map((image) => {
-          return <ArtPiecesPreview key={image.slug} image={image} />;
+          return (
+            <ArtPiecesPreview
+              artPiecesInfo={artPiecesInfo}
+              onHandleFavorites={onHandleFavorites}
+              key={image.slug}
+              image={image}
+            />
+          );
         })}
       </ul>
     </>

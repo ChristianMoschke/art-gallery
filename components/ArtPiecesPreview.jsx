@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FavoriteButton } from "./Buttons/FavoriteButton";
 
-const ArtPiecesPreview = ({ image }) => {
+const ArtPiecesPreview = ({ image, artPiecesInfo, onHandleFavorites }) => {
   return (
     <li>
       <Link href={`/art-pieces/${image.slug}`}>
@@ -14,7 +14,11 @@ const ArtPiecesPreview = ({ image }) => {
           alt="a picture of art"
         />
       </Link>
-      <FavoriteButton />
+      <FavoriteButton
+        currentPieceDetailsSlug={image.slug}
+        artPiecesInfo={artPiecesInfo}
+        onHandleFavorites={onHandleFavorites}
+      />
       <p>{image.artist}</p>
       <p>{image.name}</p>
     </li>
