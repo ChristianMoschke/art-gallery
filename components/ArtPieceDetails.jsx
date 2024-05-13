@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FavoriteButton } from "./Buttons/FavoriteButton";
 
-export const ArtPieceDetails = ({ currentPieceDetails }) => {
+export const ArtPieceDetails = ({ currentPieceDetails, onHandleFavorites }) => {
   return (
     <>
       <Image
@@ -10,6 +11,10 @@ export const ArtPieceDetails = ({ currentPieceDetails }) => {
         height={244}
         width={244}
         alt="cute art"
+      />
+      <FavoriteButton
+        currentPieceDetailsSlug={currentPieceDetails.slug}
+        onHandleFavorites={onHandleFavorites}
       />
       <h3>{currentPieceDetails.name}</h3>
       <p>Artist: {currentPieceDetails.artist}</p>

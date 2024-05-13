@@ -1,10 +1,14 @@
 import ArtPieces from "@/components/ArtPieces";
 import Spotlight from "@/components/Spotlight";
 
-export default function HomePage({ image }) {
+export default function HomePage({ image, artPiecesInfo, onHandleFavorites }) {
   return (
     <div>
-      <Spotlight image={image} />
+      <Spotlight
+        artPiecesInfo={artPiecesInfo}
+        onHandleFavorites={onHandleFavorites}
+        image={image}
+      />
     </div>
   );
 }
