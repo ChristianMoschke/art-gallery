@@ -1,7 +1,6 @@
 import React from "react";
 
 import ArtPiecesPreview from "./ArtPiecesPreview";
-import Link from "next/link";
 
 const ArtPieces = ({ pieces, artPiecesInfo, onHandleFavorites }) => {
   return (
