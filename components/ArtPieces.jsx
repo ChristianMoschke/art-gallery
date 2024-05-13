@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import ArtPiecesPreview from "./ArtPiecesPreview";
 
 const ArtPieces = ({ pieces }) => {
