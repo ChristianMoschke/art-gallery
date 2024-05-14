@@ -7,6 +7,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
+  console.log(artPiecesInfo);
 
   function handleFavorites(pieceName) {
     const existingIndex = artPiecesInfo.findIndex(

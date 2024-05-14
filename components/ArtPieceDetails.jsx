@@ -3,7 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { FavoriteButton } from "./Buttons/FavoriteButton";
 
-export const ArtPieceDetails = ({ currentPieceDetails, onHandleFavorites }) => {
+export const ArtPieceDetails = ({
+  artPiecesInfo,
+  currentPieceDetails,
+  onHandleFavorites,
+}) => {
   return (
     <>
       <Image
@@ -13,6 +17,7 @@ export const ArtPieceDetails = ({ currentPieceDetails, onHandleFavorites }) => {
         alt="cute art"
       />
       <FavoriteButton
+        artPiecesInfo={artPiecesInfo}
         currentPieceDetailsSlug={currentPieceDetails}
         onHandleFavorites={onHandleFavorites}
       />
