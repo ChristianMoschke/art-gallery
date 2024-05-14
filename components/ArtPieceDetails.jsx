@@ -2,8 +2,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FavoriteButton } from "./Buttons/FavoriteButton";
+import CommentForm from "./CommentForm";
+import Comments from "./Comments";
 
 export const ArtPieceDetails = ({
+  onHandleSubmit,
   artPiecesInfo,
   currentPieceDetails,
   onHandleFavorites,
@@ -25,6 +28,17 @@ export const ArtPieceDetails = ({
       <p>Artist: {currentPieceDetails.artist}</p>
       <p>Year: {currentPieceDetails.year}</p>
       <p>Genre: {currentPieceDetails.genre}</p>
+      <br />
+      <Comments
+        artPiecesInfo={artPiecesInfo}
+        currentPieceDetails={currentPieceDetails}
+      />
+      <br />
+      <CommentForm
+        currentPieceDetails={currentPieceDetails}
+        onHandleSubmit={onHandleSubmit}
+      />
+      <br />
       <Link href="/art-pieces">Back to Home</Link>
     </>
   );

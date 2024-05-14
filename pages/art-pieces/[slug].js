@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { ArtPieceDetails } from "@/components/ArtPieceDetails";
 
 export default function DetailsPage({
+  onHandleSubmit = { onHandleSubmit },
   image,
   artPiecesInfo,
   onHandleFavorites,
@@ -15,6 +16,7 @@ export default function DetailsPage({
   return (
     <div>
       <ArtPieceDetails
+        onHandleSubmit={onHandleSubmit}
         artPiecesInfo={artPiecesInfo}
         onHandleFavorites={onHandleFavorites}
         currentPieceDetails={currentPieceDetails}

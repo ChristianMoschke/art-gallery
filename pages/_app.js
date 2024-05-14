@@ -7,6 +7,38 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
+  const currentDate = new Date();
+  const handleSubmit = (name) => (event) => {
+    event.preventDefault();
+    const { value } = event.target.elements.comments;
+    const existingArtPieceIndex = artPiecesInfo.findIndex(
+      (piece) => piece.name === name
+    );
+    if (existingArtPieceIndex !== -1) {
+      const updatedArtPiecesInfo = [...artPiecesInfo];
+
+      const existingComments =
+        updatedArtPiecesInfo[existingArtPieceIndex].comment || [];
+      existingComments.push({ text: value, date: currentDate.getDate() });
+      updatedArtPiecesInfo[existingArtPieceIndex].comment = existingComments;
+      setArtPiecesInfo(updatedArtPiecesInfo);
+    } else {
+      const newArtPiece = {
+        name: name,
+        isFavorite: false,
+        comment: [
+          {
+            text: value,
+            date:
+              `${currentDate.getDate()}` +
+              `/${currentDate.getMonth()}` +
+              `/${currentDate.getFullYear()}`,
+          },
+        ],
+      };
+      setArtPiecesInfo((prevArtPieces) => [...prevArtPieces, newArtPiece]);
+    }
+  };
   console.log(artPiecesInfo);
 
   function handleFavorites(pieceName) {
@@ -41,6 +73,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Layout>
         <Component
+          onHandleSubmit={handleSubmit}
           {...pageProps}
           image={data}
           artPiecesInfo={artPiecesInfo}
