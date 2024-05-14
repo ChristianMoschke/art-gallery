@@ -1,11 +1,18 @@
 import React from "react";
-
 import ArtPiecesPreview from "./ArtPiecesPreview";
+import styled from "styled-components";
+
+const ArtPiecesList = styled.ul`
+  display: flex;
+  gap: 40px 0;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+`;
 
 const ArtPieces = ({ pieces, artPiecesInfo, onHandleFavorites }) => {
   return (
     <>
-      <ul>
+      <ArtPiecesList>
         {pieces.map((image) => {
           return (
             <ArtPiecesPreview
@@ -16,7 +23,7 @@ const ArtPieces = ({ pieces, artPiecesInfo, onHandleFavorites }) => {
             />
           );
         })}
-      </ul>
+      </ArtPiecesList>
     </>
   );
 };

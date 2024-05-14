@@ -1,5 +1,11 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
+import styled from "styled-components";
+
+const Button = styled.button`
+background-color: #C8BDB3;
+border: none;
+`
 
 export const FavoriteButton = ({
   onHandleFavorites,
@@ -13,7 +19,7 @@ export const FavoriteButton = ({
 
   return (
     <>
-      <button
+      <Button
         type="button"
         onClick={() => {
           onHandleFavorites(currentPieceDetailsSlug.name);
@@ -23,7 +29,7 @@ export const FavoriteButton = ({
           style={containsName ? { color: "red" } : { color: "black" }}
           size={30}
         />
-      </button>
+      </Button>
     </>
   );
 };
